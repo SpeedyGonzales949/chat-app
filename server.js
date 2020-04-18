@@ -1,4 +1,4 @@
-var port = process.env.port;
+var port = process.env.PORT;
 const io = require("socket.io")(port);
 console.log("server started at: " + port);
 window.location = "index.html";
