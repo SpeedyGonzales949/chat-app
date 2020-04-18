@@ -1,27 +1,19 @@
 {
-  "name": "chatserver",
+  "name": "current-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SpeedyGonzales949/chat-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/SpeedyGonzales949/chat-app/issues"
-  },
-  "homepage": "https://github.com/SpeedyGonzales949/chat-app#readme"
+    "nodemon": "^1.19.0"
+  }
 }
