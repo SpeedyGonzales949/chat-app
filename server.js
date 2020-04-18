@@ -1,5 +1,7 @@
-const io = require("socket.io")(221);
-
+var port = process.env.port;
+const io = require("socket.io")(port);
+console.log("server started at: " + port);
+window.location = "index.html";
 const users = {};
 
 io.on("connection", (socket) => {
