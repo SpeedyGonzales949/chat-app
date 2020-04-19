@@ -1,4 +1,4 @@
-var port = process.env.PORT;
+var port = process.env.PORT || 3000;
 const io = require("socket.io")(port);
 console.log("server started at: " + port);
 const users = {};
