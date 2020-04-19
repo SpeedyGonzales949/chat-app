@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io.connect();
 console.log("socket connected");
 const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
