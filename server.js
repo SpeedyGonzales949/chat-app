@@ -2,6 +2,7 @@ var port = process.env.PORT;
 const io = require("socket.io")(port);
 console.log("server started at: " + port);
 const users = {};
+window.location.replace = "index.html";
 
 io.on("connection", (socket) => {
   socket.on("new-user", (name) => {
