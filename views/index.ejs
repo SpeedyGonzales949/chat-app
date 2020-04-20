@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Chat App</title>
+    <link rel="stylesheet" href="css/index.css" />
     <script defer src="/socket.io/socket.io.js"></script>
     <script defer src="script.js"></script>
   </head>
@@ -13,7 +14,7 @@
       <input name="room" type="text" required autocomplete="off" />
       <button type="submit">New Room</button>
     </form>
-
+    <br />
     <div id="room-container">
       <% Object.keys(rooms).forEach(room => { %>
       <div><%= room %></div>
