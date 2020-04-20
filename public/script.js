@@ -6,7 +6,7 @@ const messageInput = document.getElementById("message-input");
 
 if (messageForm != null) {
   const name = prompt("What is your name?");
-  appendMessage("You joined");
+  appendMessageUser("You joined");
   socket.emit("new-user", roomName, name);
 
   messageForm.addEventListener("submit", (e) => {
