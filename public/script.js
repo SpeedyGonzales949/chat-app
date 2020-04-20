@@ -12,7 +12,7 @@ if (messageForm != null) {
   messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const message = messageInput.value;
-    appendMessage(`You: ${message}`);
+    appendMessageUser(`You: ${message}`);
     socket.emit("send-chat-message", roomName, message);
     messageInput.value = "";
   });
@@ -42,6 +42,17 @@ socket.on("user-disconnected", (name) => {
 
 function appendMessage(message) {
   const messageElement = document.createElement("div");
-  messageElement.innerText = message;
+  const par = document.createElement("p");
+  par.innerText = message;
+  messageElement.appendChild(par);
+  messageContainer.append(messageElement);
+}
+
+function appendMessageUser(message) {
+  const messageElement = document.createElement("div");
+  messageElement.style = "margin-left:auto";
+  const par = document.createElement("p");
+  par.innerText = message;
+  messageElement.appendChild(par);
   messageContainer.append(messageElement);
 }
