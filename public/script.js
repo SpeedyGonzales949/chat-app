@@ -46,17 +46,42 @@ function appendMessage(message) {
   par.innerText = message;
   messageElement.appendChild(par);
   messageContainer.append(messageElement);
+  messageContainer.append(createTime(0));
   updateScroll();
 }
 
 function appendMessageUser(message) {
   const messageElement = document.createElement("div");
   messageElement.style = "margin-left:auto";
+
   const par = document.createElement("p");
   par.innerText = message;
   messageElement.appendChild(par);
+
   messageContainer.append(messageElement);
+  messageContainer.append(createTime(1));
   updateScroll();
+}
+
+function createTime(i) {
+  const timeElement = document.createElement("span");
+  timeElement.innerText = getDate();
+  if (i == 1) timeElement.style = "margin-left:auto;";
+  return timeElement;
+}
+function getDate() {
+  const today = new Date();
+  const h = addZero(today.getHours());
+  const m = addZero(today.getMinutes());
+  const time = h + ":" + m;
+  return time;
+}
+
+function addZero(element) {
+  if (element < 10) {
+    element = "0" + element;
+  }
+  return element;
 }
 
 function updateScroll() {

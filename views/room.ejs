@@ -45,14 +45,20 @@
         display: flex;
         flex-direction: column;
       }
-
+      #message-container span {
+        color: white;
+        font-style: italic;
+        margin-right: 5px;
+      }
       #message-container div {
         border-radius: 10px;
         width: fit-content;
         max-width: 300px;
         height: auto;
         background-color: rgba(255, 255, 255, 0.5);
-        margin: 2px;
+        margin-right: 5px;
+        margin-top: 3px;
+        margin-bottom: 1px;
       }
       #message-container div p {
         padding: 2px;
@@ -60,6 +66,7 @@
         height: fit-content;
         max-width: 270px;
         text-align: justify;
+        margin: 0;
       }
 
       #send-container {
