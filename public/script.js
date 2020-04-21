@@ -46,7 +46,7 @@ function appendMessage(message) {
   par.innerText = message;
   messageElement.appendChild(par);
   messageContainer.append(messageElement);
-  messageContainer.append(createTime(0));
+  //messageContainer.append(createTime(0));
   updateScroll();
 }
 
@@ -59,7 +59,7 @@ function appendMessageUser(message) {
   messageElement.appendChild(par);
 
   messageContainer.append(messageElement);
-  messageContainer.append(createTime(1));
+  //messageContainer.append(createTime(1));
   updateScroll();
 }
 
