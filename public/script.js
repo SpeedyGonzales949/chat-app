@@ -57,7 +57,6 @@ function appendMessageUser(message) {
   const par = document.createElement("p");
   par.innerText = message;
   messageElement.appendChild(par);
-  const date = new Date();
   messageContainer.append(messageElement);
   messageContainer.append(createTime());
   updateScroll();
