@@ -58,14 +58,17 @@ function appendMessageUser(message) {
   par.innerText = message;
   messageElement.appendChild(par);
   messageContainer.append(messageElement);
-  messageContainer.append(createTime());
+
+  const time = createTime();
+  time.style = "margin-left:auto";
+  messageContainer.append(time);
+
   updateScroll();
 }
 
 function createTime() {
   const timeElement = document.createElement("span");
   timeElement.innerText = getDate();
-  timeElement.style = "margin-left:auto;";
   return timeElement;
 }
 function getDate() {
