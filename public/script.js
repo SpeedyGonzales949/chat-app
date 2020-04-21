@@ -15,6 +15,8 @@ if (messageForm != null) {
     appendMessageUser(`You: ${message}`);
     socket.emit("send-chat-message", roomName, message);
     messageInput.value = "";
+    messageInput.innerHTML = "";
+    messageInput.innerText = "";
   });
 }
 

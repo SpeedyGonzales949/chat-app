@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Chat App</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="emoji/emojionearea.min.css" />
+    <script src="emoji/emojionearea.min.js"></script>
+
     <script>
       const roomName = "<%= roomName %>";
     </script>
@@ -81,14 +89,6 @@
         align-items: center;
       }
 
-      #message-input {
-        margin-right: 10px;
-        border-radius: 10px;
-        padding-right: 5px;
-        padding-left: 5px;
-        resize: horizontal;
-      }
-
       #send-button {
         height: fit-content;
       }
@@ -104,7 +104,18 @@
         placeholder="Enter your message..."
         required
       ></textarea>
-      <button type="submit" id="send-button">Send</button>
+      <button onclick="eraseData()" type="submit" id="send-button">Send</button>
     </form>
+    <script>
+      $(document).ready(function () {
+        $("#message-input").emojioneArea({
+          filtersPosition: "bottom",
+        });
+      });
+      function eraseData() {
+        const emoji = document.querySelector(".emojionearea-editor");
+        emoji.innerHTML = "";
+      }
+    </script>
   </body>
 </html>
