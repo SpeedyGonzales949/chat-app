@@ -46,7 +46,7 @@ function appendMessage(message) {
   par.innerText = message;
   messageElement.appendChild(par);
   messageContainer.append(messageElement);
-  //messageContainer.append(createTime(0));
+  messageContainer.append(createTime());
   updateScroll();
 }
 
@@ -59,14 +59,14 @@ function appendMessageUser(message) {
   messageElement.appendChild(par);
   const date = new Date();
   messageContainer.append(messageElement);
-  //messageContainer.append(createTime(1));
+  messageContainer.append(createTime());
   updateScroll();
 }
 
-function createTime(i) {
+function createTime() {
   const timeElement = document.createElement("span");
   timeElement.innerText = getDate();
-  if (i == 1) timeElement.style = "margin-left:auto;";
+  timeElement.style = "margin-left:auto;";
   return timeElement;
 }
 function getDate() {
