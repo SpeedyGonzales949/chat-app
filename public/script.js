@@ -46,6 +46,7 @@ function appendMessage(message) {
   par.innerText = message;
   messageElement.appendChild(par);
   messageContainer.append(messageElement);
+  updateScroll();
 }
 
 function appendMessageUser(message) {
@@ -55,4 +56,9 @@ function appendMessageUser(message) {
   par.innerText = message;
   messageElement.appendChild(par);
   messageContainer.append(messageElement);
+  updateScroll();
+}
+
+function updateScroll() {
+  messageContainer.scrollTop = messageContainer.scrollHeight;
 }
