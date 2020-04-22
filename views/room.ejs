@@ -48,7 +48,8 @@
         margin-top: 20px;
         width: 80%;
         height: 80%;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         max-width: 1200px;
         display: flex;
         flex-direction: column;
@@ -70,9 +71,9 @@
       }
       #message-container div p {
         padding: 2px;
+        max-width: 270px;
         width: fit-content;
         height: fit-content;
-        max-width: 270px;
         text-align: justify;
         margin: 0;
       }
