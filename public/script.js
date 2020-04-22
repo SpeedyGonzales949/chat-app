@@ -3,9 +3,29 @@ const messageContainer = document.getElementById("message-container");
 const roomContainer = document.getElementById("room-container");
 const messageForm = document.getElementById("send-container");
 const messageInput = document.getElementById("message-input");
+const userForm = document.getElementById("user-container");
+const userInput = document.getElementById("user-name");
+const roomForm = document.getElementById("roomForm");
+const UserBtn = document.getElementById("send-user");
+let user = "";
+if (userForm != null) {
+  userForm.addEventListener("submit", (e1) => {
+    e1.preventDefault();
+    user = userInput.value;
+    userInput.classList.remove("jackInTheBox");
+    userInput.classList.add("hinge");
+    UserBtn.classList.remove("lightSpeedIn");
+    UserBtn.classList.add("bounceOut");
+    localStorage.setItem("userName", user);
+    UserBtn.addEventListener("animationend", function () {
+      roomContainer.style = "display:block";
+      roomForm.style = "display:block";
+    });
+  });
+}
 
 if (messageForm != null) {
-  const name = prompt("What is your name?");
+  const name = localStorage.getItem("userName");
   appendMessageUser("You joined");
   socket.emit("new-user", roomName, name);
 
@@ -15,8 +35,6 @@ if (messageForm != null) {
     appendMessageUser(`You: ${message}`);
     socket.emit("send-chat-message", roomName, message);
     messageInput.value = "";
-    messageInput.innerHTML = "";
-    messageInput.innerText = "";
   });
 }
 
