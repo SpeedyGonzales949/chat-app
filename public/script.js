@@ -7,6 +7,7 @@ const userForm = document.getElementById("user-container");
 const userInput = document.getElementById("user-name");
 const roomForm = document.getElementById("roomForm");
 const UserBtn = document.getElementById("send-user");
+const intro = document.getElementById("welcome");
 let user = "";
 if (userForm != null) {
   userForm.addEventListener("submit", (e1) => {
@@ -18,6 +19,7 @@ if (userForm != null) {
     UserBtn.classList.add("bounceOut");
     localStorage.setItem("userName", user);
     UserBtn.addEventListener("animationend", function () {
+      intro.appendChild(createDivName(user, intro));
       roomContainer.style = "display:block";
       roomForm.style = "display:block";
     });
@@ -108,4 +110,22 @@ function addZero(element) {
 
 function updateScroll() {
   messageContainer.scrollTop = messageContainer.scrollHeight;
+}
+
+function createDivName(name, BigDiv) {
+  const DivName = document.createElement("div");
+  DivName.style = "display:inline-block;";
+  let user = name + "!";
+  let delay = 0;
+  for (const c of user) {
+    const span = document.createElement("span");
+    span.innerHTML = c;
+
+    span.style = "display: inline-block;animation-delay:" + delay + "s;";
+    span.classList.add("animated", "bounceInDown");
+    DivName.appendChild(span);
+    delay += 0.1;
+  }
+  BigDiv.style = "display:block;";
+  return DivName;
 }

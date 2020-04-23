@@ -47,7 +47,7 @@
       #message-container {
         margin-top: 20px;
         width: 80%;
-        height: 80%;
+        height: 70%;
         overflow-y: auto;
         overflow-x: hidden;
         max-width: 1200px;
@@ -97,6 +97,20 @@
       @media only screen and (max-width: 600px) {
         #send-container {
           flex-direction: column;
+        }
+      }
+      @media only screen and (max-height: 640px) {
+        #message-container {
+          margin-top: 0px;
+          height: auto;
+          flex-grow: 1;
+        }
+        #send-container {
+          position: relative;
+        }
+        body {
+          flex-direction: column;
+          align-items: center;
         }
       }
     </style>

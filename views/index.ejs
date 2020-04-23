@@ -76,9 +76,22 @@
       #roomForm {
         display: none;
       }
+
+      #welcome {
+        color: white;
+        display: none;
+        font-size: 20px;
+      }
+
+      #welcome div span {
+        color: white;
+        margin: 1px;
+        font-size: 40px;
+      }
     </style>
   </head>
   <body>
+    <div id="welcome">Welcome back,</div>
     <form id="user-container" method="GET">
       <input
         class="animated jackInTheBox"
@@ -143,10 +156,11 @@
         name="room"
         type="text"
         required
-        class="animated rollIn delay-1s"
+        class="animated rotateInDownLeft delay-1s"
         autocomplete="off"
+        placeholder="Creat or Choose"
       />
-      <button type="submit" class="animated bounceInDown delay-1s">
+      <button type="submit" class="animated rotateInDownRight delay-1s">
         New Room
       </button>
     </form>
