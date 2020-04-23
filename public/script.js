@@ -124,7 +124,7 @@ function createDivName(name, BigDiv) {
     span.style = "display: inline-block;animation-delay:" + delay + "s;";
     span.classList.add("animated", "bounceInDown");
     DivName.appendChild(span);
-    delay += 0.1;
+    delay += 0.2;
   }
   BigDiv.style = "display:block;";
   return DivName;
