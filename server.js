@@ -20,7 +20,6 @@ app.post("/room", (req, res) => {
   }
   rooms[req.body.room] = { users: {} };
   res.redirect(req.body.room);
-  // Send message that new room was created
   io.emit("room-created", req.body.room);
 });
 
